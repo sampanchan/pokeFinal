@@ -113,6 +113,10 @@ body {
 				color:white;
 				// align-content: center;
 				justify-content: flex-end;
+				display: none;
+				@include mixins.bp-medium{
+					display: block;
+				}
 			}
 			
 	
