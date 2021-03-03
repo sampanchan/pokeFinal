@@ -248,6 +248,8 @@ header .open-nav nav ul li a {
   text-decoration: none;
   border: 1px solid #358b76;
   padding: 2px 30px 2px 30px;
+  width: 30vw;
+  margin: 0 auto;
 }
 .main p {
   color: #358b76;
@@ -552,8 +554,24 @@ header .open-nav nav ul li a {
   -ms-grid-row: 8;
   -ms-grid-column: 9;
 }
+.main .poke-postcard-front a:hover {
+  background: #358b76;
+  color: #fff;
+  transition: ease-in-out 0.5s;
+}
 .main .poke-postcard-front::before {
+  content: "";
   background-image: url(/src/img/main_img.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 70vw;
+  height: 60vh;
+  position: absolute;
+  margin-left: 0 auto;
+  margin-top: 55px;
+  left: 50px;
+  z-index: 0;
+  border: white solid 10px;
 }
 .main .post-card-front-div {
   background: white;
@@ -566,6 +584,7 @@ header .open-nav nav ul li a {
   grid-row: 2/8;
   width: 70vw;
   height: 65vh;
+  position: relative;
 }
 @media screen and (min-width: 768px) {
   .main .post-card-front-div {
@@ -579,6 +598,19 @@ header .open-nav nav ul li a {
   text-align: center;
   line-height: 40px;
   margin-bottom: 50px;
+}
+.main .post-card-front-div .poke-flex {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .main .post-card-front-div .poke-flex {
+    flex-direction: row;
+  }
+}
+.main .post-card-front-div .poke-flex > p {
+  line-height: 30px;
+  margin: 20px;
 }
 .main .gallery-images {
   display: -ms-grid;
@@ -604,6 +636,9 @@ header .open-nav nav ul li a {
 .main .gallery-images img:hover {
   -webkit-filter: blur(10px);
           filter: blur(10px);
+  background-color: #c1c1f3;
+  background-blend-mode: multiply;
+  transition: ease-in-out 0.3s;
 }
 @media screen and (min-width: 768px) {
   .main .gallery-images img {
@@ -936,6 +971,11 @@ header .open-nav nav ul li a {
   color: #358b76;
   margin: 25px;
 }
+.main .catering-postcard .number-2 a:hover {
+  background: #358b76;
+  color: #fff;
+  transition: ease-in-out 0.5s;
+}
 @media screen and (min-width: 768px) {
   .main .catering-postcard {
     background-size: contain;
@@ -947,6 +987,7 @@ header .open-nav nav ul li a {
   display: grid;
   height: 80vh;
   width: 100vw;
+  position: relative;
 }
 @media screen and (min-width: 768px) {
   .main .hungry-postcard {
@@ -954,15 +995,28 @@ header .open-nav nav ul li a {
     height: 55vh;
   }
 }
+.main .hungry-postcard::before {
+  content: "";
+  background-image: url(/src/img/footer_img.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100px;
+  height: 150px;
+  position: absolute;
+  margin-left: 0 auto;
+  top: 10px;
+  right: 34px;
+  z-index: 2;
+}
 .main .hungry-postcard .number-3 {
   margin: 0 auto;
   z-index: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 8;
+  grid-column: 1/9;
 }
 @media screen and (min-width: 768px) {
   .main .hungry-postcard .number-3 {
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 8;
-    grid-column: 1/9;
     -ms-grid-row: 3;
     grid-row: 3;
     width: 75vw;

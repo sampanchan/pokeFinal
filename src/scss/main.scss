@@ -121,6 +121,8 @@ header{
 		text-decoration: none;
 		border: 1px solid variables.$green;
 		padding: 2px 30px 2px 30px;
+		width: 30vw;
+    	margin: 0 auto;
 		
 	}
 	p{
@@ -138,10 +140,31 @@ header{
 		height: 80vh;
 		width: 100vw;
 		color: variables.$green;
-		&::before{
-			background-image: url(/src/img/main_img.jpg);
+		
+		a{
+			&:hover{
+				background: variables.$green;
+				color: variables.$white;
+				transition: ease-in-out .5s;
+			}
 		}
 		
+		&::before{
+			content: "";
+			background-image: url(/src/img/main_img.jpg);
+			background-size: cover;
+			background-position: center;
+			width: 70vw;
+    		height: 60vh;
+			position: absolute;
+			margin-left: 0 auto;
+			margin-top: 55px;
+			left: 50px;
+			z-index: 0;
+			border: white solid 10px;
+
+
+		}
 	}
 	.post-card-front-div{
 		background: white;
@@ -150,6 +173,9 @@ header{
 		grid-row: 2/8;
 		width: 70vw;
 		height: 65vh;
+		position: relative;
+		
+
 		
 		@include mixins.bp-medium{
 			grid-column: 5/9;
@@ -160,6 +186,17 @@ header{
 			text-align: center;
 			line-height: 40px;
 			margin-bottom: 50px;
+		}
+		.poke-flex{
+			display: flex;
+			flex-direction: column;
+			@include mixins.bp-medium{
+				flex-direction: row;
+			}
+			>p{
+				line-height: 30px;
+				margin:20px;
+			}
 		}
 		
 	}
@@ -180,6 +217,12 @@ header{
 			width: 210px;
 			&:hover{
 				filter: blur(10px);
+				// background: red;
+				background-color: rgb(193, 193, 243);
+				background-blend-mode: multiply;
+				transition: ease-in-out .3s;
+				// background-blend-mode: hard-light;
+				// transition: ease-in-out .3s;
 			}
 			@include mixins.bp-medium{
 				width: 375px;
@@ -198,6 +241,7 @@ header{
 		display: grid;
 		grid-template-columns: repeat(9, 1fr);
 		grid-template-rows: repeat(8, 1fr);
+		
 		.number-2{
 			margin: 0px auto;
 			z-index: 1;
@@ -205,6 +249,7 @@ header{
 			grid-row: 2/7;
 			height: 60vh;
 			width: 78vw;
+			
 			@include mixins.bp-medium{
 				height: 55vh;
 				width: 30vw;
@@ -213,6 +258,13 @@ header{
 			>p{
 				color: variables.$green;
 				margin: 25px;
+			}
+			a{
+				&:hover{
+					background: variables.$green;
+					color: variables.$white;
+					transition: ease-in-out .5s;
+				}
 			}
 		}
 		@include mixins.bp-medium{
@@ -226,15 +278,34 @@ header{
 		display: grid;
 		height: 80vh;
 		width: 100vw;
+		position: relative;
 		@include mixins.bp-medium{
 			background: #f7cef5;
 			height: 55vh;
 		}
+		&::before{
+			content: "";
+			background-image: url(/src/img/footer_img.jpg);
+			background-size: cover;
+			background-position: center;
+			width: 100px;
+			height: 150px;
+			// position: right;
+			position: absolute;
+			margin-left: 0 auto;
+			top: 10px;
+    		right: 34px;
+    		z-index: 2;
+
+
+		}
+		
 		.number-3{
 			margin: 0 auto;
 			z-index: 1;
+			grid-column: 1/9;
 			@include mixins.bp-medium{
-				grid-column: 1/9;
+				
 				grid-row: 3;
 				width: 75vw;
     			height: 40vh;
