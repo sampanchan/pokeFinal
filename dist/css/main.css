@@ -175,63 +175,120 @@ header {
   height: 80vh;
   width: 100vw;
 }
-header .close-nav {
-  color: white;
-  width: 100px;
-  height: 10px;
+header svg {
+  position: relative;
+  left: 50%;
+  top: 130px;
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
-header a {
-  text-decoration: none;
-  color: white;
-  margin-left: 0;
-  text-transform: uppercase;
-  background: #358b76;
-  padding: 10px;
+header svg path {
+  fill: white;
+  margin: 0 auto;
 }
-@media screen and (min-width: 768px) {
-  header a {
-    display: none;
-  }
-}
-header .header-title {
-  text-align: center;
+header h1,
+header h2,
+header h3 {
   color: #fff;
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 1rem;
+  letter-spacing: 5px;
+  -ms-transform: scaleY(1.5);
+      transform: scaleY(1.5);
+  margin-top: 1rem;
 }
-header .header-title > h1 {
+header h1 {
   font-family: "Pacifico", cursive;
+  font-size: 43px;
   -ms-transform: rotate(-10deg);
       transform: rotate(-10deg);
-  font-size: 43px;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
-header .header-title > h2 {
+header h2 {
   font-weight: bold;
-  -ms-transform: scaleY(1.5);
-      transform: scaleY(1.5);
-  letter-spacing: 3px;
 }
-header .header-title > h3 {
-  -ms-transform: scaleY(1.5);
-      transform: scaleY(1.5);
-  letter-spacing: 3px;
+header h3 {
+  font-size: 16px;
 }
-header .open-nav nav {
-  display: none;
+header nav {
+  background-color: #d6a51d;
+  text-align: left;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 80vh;
+  width: 80vw;
+  z-index: 5;
 }
 @media screen and (min-width: 768px) {
-  header .open-nav nav {
-    display: block;
+  header nav {
+    background: none;
   }
 }
-header .open-nav nav ul li {
-  background: #e2c02b;
-  text-align: right;
-  position: left;
+header nav ul {
+  display: flex;
+  flex-direction: column;
 }
-header .open-nav nav ul li a {
-  position: relative;
+@media screen and (min-width: 768px) {
+  header nav ul {
+    flex-direction: row;
+  }
+}
+header nav ul li {
+  margin: 30px;
+}
+header nav ul li a {
+  text-decoration: none;
   color: black;
-  background: none;
+  font-size: 20px;
+}
+header nav ul li a:hover {
+  color: #358b76;
+}
+@media screen and (min-width: 768px) {
+  header nav ul li a:hover {
+    background-color: #358b76;
+    color: white;
+  }
+}
+header nav ul ol {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+@media screen and (min-width: 768px) {
+  header nav ul ol {
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+}
+header nav ul ol li {
+  margin: 20px;
+}
+header nav ul ol li a {
+  color: white;
+  font-size: 25px;
+}
+header nav ul ol li a:hover {
+  color: lightcoral;
+}
+header .fa-envelope-square {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 5;
+  color: #358b76;
+  font-size: 80px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  background: #b6f1d9;
+  border-radius: 10px;
+}
+@media screen and (min-width: 768px) {
+  header .fa-envelope-square {
+    display: none;
+  }
 }
 
 .main h4 {
@@ -261,7 +318,7 @@ header .open-nav nav ul li a {
   grid-template-columns: repeat(9, 1fr);
   -ms-grid-rows: (1fr)[8];
   grid-template-rows: repeat(8, 1fr);
-  background: #e2c02b;
+  background: #d6a51d;
   height: 80vh;
   width: 100vw;
   color: #358b76;
@@ -649,6 +706,7 @@ header .open-nav nav ul li a {
   background: url(/src/img/catering_img.jpg);
   background-position: center;
   background-attachment: fixed;
+  background-repeat: no-repeat;
   height: 80vh;
   width: 100vw;
   display: -ms-grid;
@@ -965,6 +1023,7 @@ header .open-nav nav ul li a {
     -ms-grid-column: 5;
     -ms-grid-column-span: 1;
     grid-column: 5/6;
+    background-size: cover;
   }
 }
 .main .catering-postcard .number-2 > p {

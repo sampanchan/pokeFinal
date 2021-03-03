@@ -46,67 +46,126 @@ header{
 	background-position: center;
 	height: 80vh;
 	width: 100vw;
-	.close-nav{
-		color: white;
-		width: 100px;
-		height: 10px;
-	}
 	
-	a{
-		text-decoration: none;
-		color:white;
-		margin-left: 0;
-		text-transform: uppercase;
-		background: rgb(53, 139, 118);
-		padding: 10px;
-		@include mixins.bp-medium{
-			display: none;
+	
+	svg{
+		position: relative;
+		left: 50%;
+		top:130px;
+		// top:-50%;
+		-webkit-transform: translateX(-50%);
+		-ms-transform: translateX(-50%);
+		transform: translateX(-50%);
+		
+		path{
+			fill: white;
+			margin: 0 auto;
 		}
 		
 	}
-	.header-title{
-		text-align: center;
+
+	h1, 
+	h2,
+	h3{
 		color: variables.$white;
-		// margin-top: 24rem;
-		>h1{
-			font-family: variables.$title-font;
-			transform: rotate(-10deg);
-			font-size: 43px;
-			margin-bottom: 1rem;
-		}
-		>h2{
-			font-weight: bold;
-			transform: scaleY(1.5);
-			letter-spacing: 3px;
-		}
-		>h3{
-			transform: scaleY(1.5);
-			letter-spacing: 3px;
-		}
+		text-align: center;
+		font-size: 20px;
+		margin-bottom: 1rem;
+		letter-spacing: 5px;
+		transform: scaleY(1.5);
+		margin-top: 1rem;
 	}
-	.open-nav nav{
-		// position: absolute;
-		display: none;
+	h1{
+		font-family: variables.$title-font;
+		font-size: 43px;
+		transform: rotate(-10deg);
+		margin-bottom: 2rem;
+	}
+	h2{
+		font-weight: bold;
+		
+	}
+	h3{
+		font-size: 16px;
+
+	}
+	nav{
+		background-color: variables.$yellow;
+		text-align: left;
+		position: absolute;
+		top:0;
+		right:0;
+		height: 80vh;
+		width: 80vw;
 		@include mixins.bp-medium{
-			display: block;
+			// display: none;
+			background: none;
 		}
+		
+		z-index: 5;
 		ul{
-			
+			display: flex;
+			flex-direction: column;
+			@include mixins.bp-medium{
+				flex-direction: row;
+			}
 			li{
-				background: rgb(226, 192, 43);
-				text-align: right;
-				position: left;
-				
+				margin: 30px;
 				a{
-					position: relative;
+					text-decoration: none;
 					color: black;
-					background: none;
+					font-size: 20px;
+					&:hover{
+						color: variables.$green;
+						@include mixins.bp-medium{
+							background-color: variables.$green;
+							color: white;
+							// margin: 10px;
+						}
+					}
+				}
+			}
+			
+			ol{
+				display: flex;
+				justify-content: center;
+				margin-top: 2rem;
+				@include mixins.bp-medium{
+					flex-direction: column;
+					justify-content: flex-end;
+				}
+				li{
+					margin:20px;
+					a{
+						color: white;
+						font-size: 25px;
+						&:hover{
+							color: lightcoral;
+						}
+					}
 				}
 			}
 		}
-	}
+	}	
 
+
+	.fa-envelope-square{
+		position: fixed;
+		bottom: 0;
+		right: 0;
+		z-index:5;
+		color: variables.$green;
+		font-size: 80px;
+		margin-right: 20px;
+		margin-bottom: 10px;
+		background: rgb(182, 241, 217);
+		border-radius: 10px;
+		@include mixins.bp-medium{
+			display:none;
+		}	
+	}
 }
+
 .main{
 	h4{
 		font-family: variables.$title-font;
@@ -128,10 +187,7 @@ header{
 	p{
 		color: variables.$green;
 	}
-	// img #chat{
-	// 	position: sticky;
-	// 	bottom: 0;
-	// }
+	
 	.poke-postcard-front {
 		display: grid;
 		grid-template-columns:  repeat(9, 1fr);
@@ -236,6 +292,8 @@ header{
 		
 		background-position: center;
 		background-attachment: fixed;
+		
+		background-repeat: no-repeat;
 		height: 80vh;
 		width: 100vw;
 		display: grid;
@@ -254,6 +312,7 @@ header{
 				height: 55vh;
 				width: 30vw;
 				grid-column: 5/6;
+				background-size: cover;
 			}
 			>p{
 				color: variables.$green;
