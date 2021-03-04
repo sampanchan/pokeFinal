@@ -185,6 +185,8 @@ header{
 			// display: none;
 			background: none;
 			display: block;
+			position: fixed;
+			
 		}
 		
 		z-index: 5;
@@ -203,12 +205,14 @@ header{
 					color: black;
 					font-size: 20px;
 					&:hover{
-						color: variables.$green;
 						@include mixins.bp-medium{
-							background-color: variables.$green;
-							color: white;
-							// margin: 10px;
+							color: variables.$green;
 						}
+					}
+					@include mixins.bp-medium{
+						
+						color: variables.$white;
+						
 					}
 				}
 			}
@@ -220,6 +224,11 @@ header{
 						background-color: variables.$green;
 						color: variables.$white;
 						padding: 5px;
+						&:hover{
+							@include mixins.bp-medium{
+								color: black;
+							}
+						}
 					}
 					
 					
@@ -257,17 +266,18 @@ header{
 	}	
 
 
-	.fa-envelope-square{
+	.fa-comment-alt{
 		position: fixed;
 		bottom: 0;
 		right: 0;
 		z-index:5;
-		color: variables.$green;
+		color: rgb(182, 241, 217);
 		font-size: 80px;
 		margin-right: 20px;
 		margin-bottom: 10px;
-		background: rgb(182, 241, 217);
-		border-radius: 10px;
+		border-radius: 50px;
+		// -webkit-box-shadow: 0px 10px 19px 0px rgba(0,0,0,0.35); 
+		// box-shadow: 0px 10px 19px 0px rgba(0,0,0,0.35);
 		@include mixins.bp-medium{
 			display:none;
 		}	
@@ -289,17 +299,21 @@ header{
 		border: 1px solid variables.$green;
 		padding: 2px 30px 2px 30px;
 		width: 30vw;
-    	margin: 0 auto;
+		margin: 0 auto;
+		
 		
 	}
 	p{
 		color: variables.$green;
 	}
-	
-	.poke-postcard-front {
+	.poke-postcard-back{
+		max-width: 400px;
+		
+	}
+	.poke-postcards {
 		display: grid;
-		grid-template-columns:  repeat(9, 1fr);
-		grid-template-rows: repeat(8, 1fr);
+		grid-template-columns:  1fr repeat(9, 1fr) 1fr;
+		grid-template-rows: 1fr repeat(8, 1fr) 1fr;
 		background: variables.$yellow ;
 		height: 80vh;
 		width: 100vw;
@@ -307,38 +321,13 @@ header{
 		position: relative;
 		@include mixins.bp-medium{
 			height:100vh;
+			grid-template-columns:  2fr repeat(9, 1fr) 2fr;
+		
 		}
 		
-		a{
-			&:hover{
-				background: variables.$green;
-				color: variables.$white;
-				transition: ease-in-out .5s;
-			}
-		}
 		
-		&::before{
-			content: "";
-			background-image: url(/src/img/main_img.jpg);
-			background-size: cover;
-			background-position: center;
-			width: 70vw;
-    		height: 60vh;
-			position: absolute;
-			margin-left: 0 auto;
-			margin-top: 55px;
-			left: 55px;
-			z-index: 0;
-			border: white solid 10px;
-			
-			@include mixins.bp-medium{
-				width:29vw;
-				height: 51vh;
-				grid-column: 3/6;
-				grid-row: 3;
-			}
-
-		}
+		
+		
 		img{
 			position: absolute;
 			top: -10;
@@ -350,24 +339,42 @@ header{
 				top: 20%;
 			}
 		}
+
 	}
-	.post-card-front-div{
+
+	.poke-postcard-back{
+		
+			background-image: url(/src/img/main_img.jpg);
+			background-size: cover;
+			background-position: center;
+			z-index: 0;
+			border: white solid 10px;
+			grid-column: 2/span 8;
+			grid-row: 2/span 7;
+			
+			@include mixins.bp-medium{
+				
+				grid-column: 2/span 5;
+				grid-row: 2/span 7;
+			}
+
+	}
+	.poke-postcard-front{
 		background: white;
 		text-align: center;
-		grid-column: 3/9;
-		grid-row: 3/8;
-		width: 70vw;
-		height: 55vh;
+		grid-column: 3/ span 8;
+		grid-row: 3/span 7;
 		position: relative;
 		@include mixins.bp-medium{
-			grid-column: 4/9;
-    		grid-row: 6;
-    		width: 35vw;
+			grid-column: 3/ span 7;
+    		grid-row: 3/ span 5;
+    	
 		}
 		>p{
 			text-align: center;
 			line-height: 40px;
 			margin-bottom: 50px;
+			
 		}
 		
 		.poke-flex{
@@ -375,45 +382,48 @@ header{
 			flex-direction: column;
 			@include mixins.bp-medium{
 				flex-direction: row;
+				align-items: center;
+				justify-content: space-around;
 			}
 			>p{
 				line-height: 30px;
 				margin:20px;
+				@include mixins.bp-medium{
+					width: 50%;
+				}
 			}
 		}
-		
-	}
-	.gallery-images{
-		display: grid;
-		grid-template-columns: repeat(2,1fr);
-		grid-gap:30px;
-		margin-bottom: 20px;
-		margin-top: 20px;
-		margin-left: 20px;
-		@include mixins.bp-medium{
-			grid-template-columns: repeat(4,1fr);
-			grid-gap: 70px;
-			margin-bottom: 65px;
-    		margin-top: 65px;
-    		margin-left: 35px;
-			margin-right: 35px;	
-			height: 100vh;
-		}
-		
-		img{
-			width: 210px;
+		a{
 			&:hover{
-				display: block;
-				filter: drop-shadow(0px 16px 10px rgb(163, 240, 210));
-				transition: ease-in-out .3s;
+				background: variables.$green;
+				color: variables.$white;
+				transition: ease-in-out .5s;
 			}
-			@include mixins.bp-medium{
-				width: 375px;
-			}
-			
-			
 		}
+		
 	}
+	.gallery-images {
+        display: grid;
+        gap: 2em;
+        margin: 2em;
+        max-width: 1300px;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		// height: 100vh;
+        @include mixins.bp-medium {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3em;
+            margin: 3em auto;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            &:hover {
+                display: block;
+                filter: drop-shadow(0px 16px 10px rgb(163, 240, 210));
+                transition: ease-in-out 0.3s;
+            }
+        }
+    }
 	.catering-postcard{
 		background: url(/src/img/catering_img.jpg);
 		
@@ -431,6 +441,8 @@ header{
 		}
 		
 		.number-2{
+			background: white;
+			text-align: center;
 			margin: 0px auto;
 			z-index: 1;
 			grid-column: 2/6;
@@ -447,20 +459,15 @@ header{
 			>p{
 				color: variables.$green;
 				margin: 25px;
+				line-height: 25px;
 			}
-			a{
-				&:hover{
-					background: variables.$green;
-					color: variables.$white;
-					transition: ease-in-out .5s;
-				}
-			}
-		}
-		@include mixins.bp-medium{
-			background-size: contain;
-			background-position: inherit;
 			
 		}
+		// @include mixins.bp-medium{
+		// 	background-size: contain;
+		// 	background-position: inherit;
+			
+		// }
 	}
 
 	.hungry-postcard{
@@ -484,62 +491,73 @@ header{
 			}
 				
 			}
-		}
-		
-		.number-3{
-			margin: 0 auto;
-			z-index: 1;
-			grid-column: 1/9;
-			@include mixins.bp-medium{
-				
-				grid-row: 3;
-				width: 75vw;
-    			height: 40vh;
-			}
-			&::before{
-				content: "";
-				background-image: url(/src/img/footer_img.jpg);
-				background-size: cover;
-				background-position: center;
-				width: 100px;
-				height: 130px;
-				// position: right;
-				position: absolute;
-				margin-left: 0 auto;
-				top: 10px;
-				right: 4px;
-				z-index: 2;
+			.number-3{
+				background: white;
+				text-align: center;
+				position: relative;
+				margin: 0 auto;
+				z-index: 1;
+				grid-column: 1/9;
 				@include mixins.bp-medium{
-					top:20px;
-					right:20px;
+					
+					grid-row: 3;
+					width: 75vw;
+					height: 40vh;
 				}
-			}
-			>h4{
-				margin-top: 10rem;
-				@include mixins.bp-medium{
-					margin-top: 5rem;
+				&::before{
+					content: "";
+					background-image: url(/src/img/footer_img.jpg);
+					background-size: cover;
+					background-position: center;
+					width: 100px;
+					height: 130px;
+					// position: right;
+					position: absolute;
+					margin-left: 0 auto;
+					top: 10px;
+					right: 4px;
+					z-index: 2;
+					@include mixins.bp-medium{
+						top:20px;
+						right:20px;
+					}
 				}
-			}
-			
-		}
-		.item-flex{
-			display: flex;
-			flex-direction: column;
-			@include mixins.bp-medium{
-				flex-direction: row;
-				justify-content: space-around;
-			}
-			.item{
-				margin-bottom: 50px;
-				line-height: 20px;
+				>h4{
+					margin-top: 10rem;
+					@include mixins.bp-medium{
+						margin-top: 5rem;
+						// margin-bottom: 5em;
+					}
+				}
 				>p{
-					>a{
-					border: none;
+					margin-bottom: 5em;
 				}
+				
+			}
+			.item-flex{
+				display: flex;
+				flex-direction: column;
+				align-self: flex-end;
+				@include mixins.bp-medium{
+					flex-direction: row;
+					justify-content: space-around;
+				}
+				.item{
+					margin-bottom: 50px;
+					line-height: 20px;
+					>p{
+
+						>a{
+						border: none;
+					}
+					}
 				}
 			}
-		}
 	}
+}
+		
+		
+	
 	
 
 footer{
