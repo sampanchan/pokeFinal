@@ -403,19 +403,19 @@ header nav ul ol li a:hover {
       transform: rotate(360deg);
   display: block;
 }
-header .fa-comment-alt {
+header .fa-comment {
   position: fixed;
   bottom: 0;
   right: 0;
   z-index: 5;
-  color: #b6f1d9;
+  color: #358b76;
   font-size: 80px;
   margin-right: 20px;
   margin-bottom: 10px;
   border-radius: 50px;
 }
 @media screen and (min-width: 768px) {
-  header .fa-comment-alt {
+  header .fa-comment {
     display: none;
   }
 }
