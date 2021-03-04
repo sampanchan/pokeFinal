@@ -175,6 +175,7 @@ header {
   height: 80vh;
   width: 100vw;
   position: relative;
+  overflow: hidden;
 }
 @media screen and (min-width: 768px) {
   header {
@@ -212,6 +213,9 @@ header .active-link {
   top: 0px;
   text-transform: uppercase;
   padding-top: 15px;
+}
+header .active-link:hover {
+  color: black;
 }
 @media screen and (min-width: 768px) {
   header .active-link {
@@ -316,6 +320,8 @@ header nav {
     background: none;
     display: block;
     position: fixed;
+    height: auto;
+    width: auto;
   }
 }
 header nav ul {
@@ -330,7 +336,7 @@ header nav ul {
   }
 }
 header nav ul li {
-  margin: 30px;
+  margin: 40px;
 }
 header nav ul li a {
   text-decoration: none;
@@ -348,6 +354,11 @@ header nav ul li a:hover {
 @media screen and (min-width: 768px) {
   header nav ul li a {
     color: #fff;
+  }
+}
+@media screen and (min-width: 768px) {
+  header nav ul li .home-active {
+    color: #358b76;
   }
 }
 header nav ul .active-desktop a:hover {
@@ -895,14 +906,15 @@ header .fa-comment-alt {
   background-size: cover;
   background-position: center;
   width: 100px;
-  height: 130px;
+  height: 100px;
   position: absolute;
-  top: 3em;
-  right: 4px;
+  top: 8%;
+  right: 10px;
   z-index: 2;
 }
 @media screen and (min-width: 768px) {
   .main .poke-postcards::before {
+    width: 150px;
     top: 18%;
     right: 22%;
   }
@@ -1199,6 +1211,7 @@ header .fa-comment-alt {
   color: #358b76;
   font-size: 20px;
   border: solid 1px #358b76;
+  padding: 10px;
 }
 .main .poke-postcard-front a:hover {
   background: #358b76;
@@ -1213,6 +1226,7 @@ header .fa-comment-alt {
     -ms-grid-column: 6;
     -ms-grid-column-span: 2;
     grid-column: 6/8;
+    padding: 0;
   }
 }
 .main .gallery-images {
@@ -1252,8 +1266,8 @@ header .fa-comment-alt {
   display: grid;
   -ms-grid-columns: (1fr)[9];
   grid-template-columns: repeat(9, 1fr);
-  -ms-grid-rows: (1fr)[8];
-  grid-template-rows: repeat(8, 1fr);
+  -ms-grid-rows: (1fr)[9];
+  grid-template-rows: repeat(9, 1fr);
 }
 .main .catering-postcard > *:nth-child(1) {
   -ms-grid-row: 1;
@@ -1543,6 +1557,42 @@ header .fa-comment-alt {
   -ms-grid-row: 8;
   -ms-grid-column: 9;
 }
+.main .catering-postcard > *:nth-child(73) {
+  -ms-grid-row: 9;
+  -ms-grid-column: 1;
+}
+.main .catering-postcard > *:nth-child(74) {
+  -ms-grid-row: 9;
+  -ms-grid-column: 2;
+}
+.main .catering-postcard > *:nth-child(75) {
+  -ms-grid-row: 9;
+  -ms-grid-column: 3;
+}
+.main .catering-postcard > *:nth-child(76) {
+  -ms-grid-row: 9;
+  -ms-grid-column: 4;
+}
+.main .catering-postcard > *:nth-child(77) {
+  -ms-grid-row: 9;
+  -ms-grid-column: 5;
+}
+.main .catering-postcard > *:nth-child(78) {
+  -ms-grid-row: 9;
+  -ms-grid-column: 6;
+}
+.main .catering-postcard > *:nth-child(79) {
+  -ms-grid-row: 9;
+  -ms-grid-column: 7;
+}
+.main .catering-postcard > *:nth-child(80) {
+  -ms-grid-row: 9;
+  -ms-grid-column: 8;
+}
+.main .catering-postcard > *:nth-child(81) {
+  -ms-grid-row: 9;
+  -ms-grid-column: 9;
+}
 @media screen and (min-width: 768px) {
   .main .catering-postcard {
     height: 100vh;
@@ -1553,29 +1603,54 @@ header .fa-comment-alt {
   text-align: center;
   margin: 0px auto;
   z-index: 1;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 4;
-  grid-column: 2/6;
-  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 5;
+  grid-column: 3/8;
+  -ms-grid-row: 3;
   -ms-grid-row-span: 5;
-  grid-row: 2/7;
-  height: 60vh;
-  width: 78vw;
+  grid-row: 3/8;
 }
 @media screen and (min-width: 768px) {
   .main .catering-postcard .number-2 {
-    height: 55vh;
-    width: 30vw;
-    -ms-grid-column: 5;
-    -ms-grid-column-span: 1;
-    grid-column: 5/6;
-    background-size: cover;
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 3;
+    grid-column: 4/7;
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 3;
+    grid-row: 5/8;
   }
 }
 .main .catering-postcard .number-2 > p {
   color: #358b76;
   margin: 25px;
   line-height: 25px;
+}
+@media screen and (min-width: 768px) {
+  .main .catering-postcard .number-2 > p {
+    line-height: 25px;
+  }
+}
+.main .catering-postcard .number-2 a {
+  text-decoration: none;
+  color: #358b76;
+  border: solid 1px #358b76;
+  padding: 10px;
+}
+.main .catering-postcard .number-2 a:hover {
+  background: #358b76;
+  color: #fff;
+  transition: ease-in-out 0.5s;
+}
+@media screen and (min-width: 768px) {
+  .main .catering-postcard .number-2 a {
+    font-size: 20px;
+    -ms-grid-row: 4;
+    -ms-grid-row-span: -1;
+    grid-row: 4/3;
+    -ms-grid-column: 6;
+    -ms-grid-column-span: 2;
+    grid-column: 6/8;
+  }
 }
 .main .hungry-postcard {
   display: -ms-grid;
