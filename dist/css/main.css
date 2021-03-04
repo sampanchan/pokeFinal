@@ -337,6 +337,9 @@ header nav ul li a {
   color: black;
   font-size: 20px;
 }
+header nav ul li a:hover {
+  color: #358b76;
+}
 @media screen and (min-width: 768px) {
   header nav ul li a:hover {
     color: #358b76;
@@ -346,6 +349,9 @@ header nav ul li a {
   header nav ul li a {
     color: #fff;
   }
+}
+header nav ul .active-desktop a:hover {
+  color: black;
 }
 @media screen and (min-width: 768px) {
   header nav ul .active-desktop a {
@@ -412,13 +418,10 @@ header .fa-comment-alt {
   margin-top: 50px;
   margin-bottom: 50px;
 }
-.main a {
-  color: #358b76;
-  text-decoration: none;
-  border: 1px solid #358b76;
-  padding: 2px 30px 2px 30px;
-  width: 30vw;
-  margin: 0 auto;
+@media screen and (min-width: 768px) {
+  .main h4 {
+    font-size: 40px;
+  }
 }
 .main p {
   color: #358b76;
@@ -886,6 +889,24 @@ header .fa-comment-alt {
     grid-template-columns: 2fr repeat(9, 1fr) 2fr;
   }
 }
+.main .poke-postcards::before {
+  content: "";
+  background: url("/src/img/wave.svg");
+  background-size: cover;
+  background-position: center;
+  width: 100px;
+  height: 130px;
+  position: absolute;
+  top: 3em;
+  right: 4px;
+  z-index: 2;
+}
+@media screen and (min-width: 768px) {
+  .main .poke-postcards::before {
+    top: 18%;
+    right: 22%;
+  }
+}
 .main .poke-postcards img {
   position: absolute;
   top: -10;
@@ -941,6 +962,221 @@ header .fa-comment-alt {
     -ms-grid-row: 3;
     -ms-grid-row-span: 5;
     grid-row: 3/span 5;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[8];
+    grid-template-columns: repeat(8, 1fr);
+    -ms-grid-rows: (1fr)[6];
+    grid-template-rows: repeat(6, 1fr);
+  }
+  .main .poke-postcard-front > *:nth-child(1) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+  .main .poke-postcard-front > *:nth-child(2) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+  }
+  .main .poke-postcard-front > *:nth-child(3) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+  }
+  .main .poke-postcard-front > *:nth-child(4) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 4;
+  }
+  .main .poke-postcard-front > *:nth-child(5) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 5;
+  }
+  .main .poke-postcard-front > *:nth-child(6) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 6;
+  }
+  .main .poke-postcard-front > *:nth-child(7) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 7;
+  }
+  .main .poke-postcard-front > *:nth-child(8) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 8;
+  }
+  .main .poke-postcard-front > *:nth-child(9) {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+  }
+  .main .poke-postcard-front > *:nth-child(10) {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+  }
+  .main .poke-postcard-front > *:nth-child(11) {
+    -ms-grid-row: 2;
+    -ms-grid-column: 3;
+  }
+  .main .poke-postcard-front > *:nth-child(12) {
+    -ms-grid-row: 2;
+    -ms-grid-column: 4;
+  }
+  .main .poke-postcard-front > *:nth-child(13) {
+    -ms-grid-row: 2;
+    -ms-grid-column: 5;
+  }
+  .main .poke-postcard-front > *:nth-child(14) {
+    -ms-grid-row: 2;
+    -ms-grid-column: 6;
+  }
+  .main .poke-postcard-front > *:nth-child(15) {
+    -ms-grid-row: 2;
+    -ms-grid-column: 7;
+  }
+  .main .poke-postcard-front > *:nth-child(16) {
+    -ms-grid-row: 2;
+    -ms-grid-column: 8;
+  }
+  .main .poke-postcard-front > *:nth-child(17) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+  }
+  .main .poke-postcard-front > *:nth-child(18) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 2;
+  }
+  .main .poke-postcard-front > *:nth-child(19) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 3;
+  }
+  .main .poke-postcard-front > *:nth-child(20) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 4;
+  }
+  .main .poke-postcard-front > *:nth-child(21) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 5;
+  }
+  .main .poke-postcard-front > *:nth-child(22) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 6;
+  }
+  .main .poke-postcard-front > *:nth-child(23) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 7;
+  }
+  .main .poke-postcard-front > *:nth-child(24) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 8;
+  }
+  .main .poke-postcard-front > *:nth-child(25) {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+  }
+  .main .poke-postcard-front > *:nth-child(26) {
+    -ms-grid-row: 4;
+    -ms-grid-column: 2;
+  }
+  .main .poke-postcard-front > *:nth-child(27) {
+    -ms-grid-row: 4;
+    -ms-grid-column: 3;
+  }
+  .main .poke-postcard-front > *:nth-child(28) {
+    -ms-grid-row: 4;
+    -ms-grid-column: 4;
+  }
+  .main .poke-postcard-front > *:nth-child(29) {
+    -ms-grid-row: 4;
+    -ms-grid-column: 5;
+  }
+  .main .poke-postcard-front > *:nth-child(30) {
+    -ms-grid-row: 4;
+    -ms-grid-column: 6;
+  }
+  .main .poke-postcard-front > *:nth-child(31) {
+    -ms-grid-row: 4;
+    -ms-grid-column: 7;
+  }
+  .main .poke-postcard-front > *:nth-child(32) {
+    -ms-grid-row: 4;
+    -ms-grid-column: 8;
+  }
+  .main .poke-postcard-front > *:nth-child(33) {
+    -ms-grid-row: 5;
+    -ms-grid-column: 1;
+  }
+  .main .poke-postcard-front > *:nth-child(34) {
+    -ms-grid-row: 5;
+    -ms-grid-column: 2;
+  }
+  .main .poke-postcard-front > *:nth-child(35) {
+    -ms-grid-row: 5;
+    -ms-grid-column: 3;
+  }
+  .main .poke-postcard-front > *:nth-child(36) {
+    -ms-grid-row: 5;
+    -ms-grid-column: 4;
+  }
+  .main .poke-postcard-front > *:nth-child(37) {
+    -ms-grid-row: 5;
+    -ms-grid-column: 5;
+  }
+  .main .poke-postcard-front > *:nth-child(38) {
+    -ms-grid-row: 5;
+    -ms-grid-column: 6;
+  }
+  .main .poke-postcard-front > *:nth-child(39) {
+    -ms-grid-row: 5;
+    -ms-grid-column: 7;
+  }
+  .main .poke-postcard-front > *:nth-child(40) {
+    -ms-grid-row: 5;
+    -ms-grid-column: 8;
+  }
+  .main .poke-postcard-front > *:nth-child(41) {
+    -ms-grid-row: 6;
+    -ms-grid-column: 1;
+  }
+  .main .poke-postcard-front > *:nth-child(42) {
+    -ms-grid-row: 6;
+    -ms-grid-column: 2;
+  }
+  .main .poke-postcard-front > *:nth-child(43) {
+    -ms-grid-row: 6;
+    -ms-grid-column: 3;
+  }
+  .main .poke-postcard-front > *:nth-child(44) {
+    -ms-grid-row: 6;
+    -ms-grid-column: 4;
+  }
+  .main .poke-postcard-front > *:nth-child(45) {
+    -ms-grid-row: 6;
+    -ms-grid-column: 5;
+  }
+  .main .poke-postcard-front > *:nth-child(46) {
+    -ms-grid-row: 6;
+    -ms-grid-column: 6;
+  }
+  .main .poke-postcard-front > *:nth-child(47) {
+    -ms-grid-row: 6;
+    -ms-grid-column: 7;
+  }
+  .main .poke-postcard-front > *:nth-child(48) {
+    -ms-grid-row: 6;
+    -ms-grid-column: 8;
+  }
+  .main .poke-postcard-front::before {
+    content: "";
+    background-color: #358b76;
+    width: 5px;
+    height: 300px;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    z-index: 2;
+  }
+}
+@media screen and (min-width: 768px) {
+  .main .poke-postcard-front > h4 {
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 4;
+    grid-column: 3/7;
   }
 }
 .main .poke-postcard-front > p {
@@ -948,30 +1184,36 @@ header .fa-comment-alt {
   line-height: 40px;
   margin-bottom: 50px;
 }
-.main .poke-postcard-front .poke-flex {
-  display: flex;
-  flex-direction: column;
-}
 @media screen and (min-width: 768px) {
-  .main .poke-postcard-front .poke-flex {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
+  .main .poke-postcard-front > p {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 2;
+    grid-row: 3/5;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
+    grid-column: 1/5;
   }
 }
-.main .poke-postcard-front .poke-flex > p {
-  line-height: 30px;
-  margin: 20px;
-}
-@media screen and (min-width: 768px) {
-  .main .poke-postcard-front .poke-flex > p {
-    width: 50%;
-  }
+.main .poke-postcard-front a {
+  text-decoration: none;
+  color: #358b76;
+  font-size: 20px;
+  border: solid 1px #358b76;
 }
 .main .poke-postcard-front a:hover {
   background: #358b76;
   color: #fff;
   transition: ease-in-out 0.5s;
+}
+@media screen and (min-width: 768px) {
+  .main .poke-postcard-front a {
+    -ms-grid-row: 4;
+    -ms-grid-row-span: -1;
+    grid-row: 4/3;
+    -ms-grid-column: 6;
+    -ms-grid-column-span: 2;
+    grid-column: 6/8;
+  }
 }
 .main .gallery-images {
   display: -ms-grid;
@@ -1345,7 +1587,7 @@ header .fa-comment-alt {
 @media screen and (min-width: 768px) {
   .main .hungry-postcard {
     background: #f7cef5;
-    height: 100vh;
+    height: 50vh;
   }
 }
 .main .hungry-postcard img {
@@ -1433,5 +1675,10 @@ footer {
   padding: 40px;
   font-size: 16px;
   line-height: 20px;
+}
+@media screen and (min-width: 768px) {
+  footer {
+    padding: 20px;
+  }
 }
 /*# sourceMappingURL=main.css.map */
