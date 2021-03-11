@@ -53,10 +53,12 @@ header{
 		height:100vh;
 	}
 	
-	svg{
+	.logo_svg{
 		position: relative;
 		left: 50%;
 		top:130px;
+		height: 150px;
+		width: 150px;
 		-webkit-transform: translateX(-50%);
 		-ms-transform: translateX(-50%);
 		transform: translateX(-50%);
@@ -70,14 +72,14 @@ header{
 		path{
 			fill: white;
 			margin: 0 auto;
-		}	
+		}
+
 	}
 	.active-link{
 		text-decoration: none;
 		color: variables.$white;
 		background-color: variables.$green;
-		width: 35vw;
-		height: 5vh;
+		padding:0px 10px 10px 10px;
 		font-size: 20px;
 		position: absolute;
 		text-align: center;
@@ -198,7 +200,12 @@ header{
 				margin-right: 100px;
 			}
 			li{
-				margin: 40px;
+				margin-top: 4em;
+    			margin-left: 2em;
+				@include mixins.bp-medium{
+					margin-left: 5em;
+					margin-top: 1em;
+				}
 				a{
 					text-decoration: none;
 					color: black;
@@ -249,7 +256,11 @@ header{
 					top: 35%;
 				}
 				li{
-					margin:20px;
+					margin-right: 1em;
+					@include mixins.bp-medium{
+						margin-bottom: 2em;
+						margin-right: 0;
+					}
 					a{
 						color: white;
 						font-size: 25px;
@@ -267,7 +278,7 @@ header{
 	}	
 
 
-	.fa-comment{
+	.fa-comment-alt{
 		position: fixed;
 		bottom: 0;
 		right: 0;
@@ -316,26 +327,10 @@ header{
 		@include mixins.bp-medium{
 			height:100vh;
 			grid-template-columns:  2fr repeat(9, 1fr) 2fr;
+			place-self: center;
 		
 		}
 
-		&::before{
-			content: "";
-			background: url("/src/img/wave.svg");
-			background-size: cover;
-			background-position: center;
-			width: 100px;
-			height: 100px;
-			position: absolute;
-			top: 8%;
-			right: 10px;
-			z-index: 2;
-				@include mixins.bp-medium{
-					width: 150px;
-					top: 18%;
-					right: 22%;
-				}
-		}
 		img{
 			position: absolute;
 			top: -10;
@@ -377,7 +372,8 @@ header{
 			grid-row: 3/ span 5;
 			display: grid;
 			grid-template-columns: repeat(8,1fr);
-			grid-template-rows: repeat(6,1fr);	
+			grid-template-rows: repeat(6,1fr);
+				
 			&::before{
 				content: "";
 				background-color: variables.$green;
@@ -389,6 +385,23 @@ header{
 				z-index: 2;	
 			}
 		}
+		&::after{
+			content: "";
+			background: url("/src/img/wave.svg");
+			background-size: cover;
+			background-position: center;
+			width: 100px;
+			height: 100px;
+			position: absolute;
+			top: -15%;
+			right: 0px;
+			z-index: 2;
+				@include mixins.bp-medium{
+					width: 150px;
+					top: 18%;
+					right: 22%;
+				}
+		}
 
 		>h4{
 			@include mixins.bp-medium{
@@ -399,11 +412,14 @@ header{
 
 		>p{
 			text-align: center;
-			line-height: 40px;
+			line-height: 30px;
 			margin-bottom: 50px;
+			padding: 0px 15px 0px 15px;
 			@include mixins.bp-medium{
 				grid-row: 3/5;
-    			grid-column: 1/5;	
+				grid-column: 1/5;
+				place-self: center;
+				// padding: 0px 30px 0px 30px;	
 			}	
 		}
 		
@@ -420,8 +436,9 @@ header{
 			}
 			@include mixins.bp-medium{
 				grid-row: 4/3;
-				grid-column: 6/8;
-				padding: 0;
+				grid-column: 6/-2;
+    
+    			place-self: center;
 			}
 		}	
 	}
@@ -462,6 +479,7 @@ header{
 		grid-template-rows: repeat(9, 1fr);
 		@include mixins.bp-medium{
 			height:100vh;
+			background-size: cover;
 		}
 		
 		.number-2{
@@ -474,7 +492,7 @@ header{
 			
 			@include mixins.bp-medium{
 				grid-column: 4/7;
-    			grid-row: 5/8;
+    			grid-row: 4/7;
 			}
 			>p{
 				color: variables.$green;
@@ -516,11 +534,13 @@ header{
 		
 		img{
 			position: absolute;
-			right:42px;
-			z-index: 2;
+			top: 45px;
+			right: 5px;
+			transform: rotate(-90deg);
+			z-index: 1;
 			@include mixins.bp-medium{
-				right: 55px;
-    			top: 10px;
+				right: 10px;
+    			top: 30px;
 			}	
 		}
 		.number-3{
@@ -539,19 +559,19 @@ header{
 
 			&::before{
 				content: "";
-				background-image: url(/src/img/footer_img.jpg);
+				background-image: url(/src/img/wave.svg);
 				background-size: cover;
 				background-position: center;
-				width: 100px;
-				height: 130px;
+				width: 110px;
+				height: 75px;
 				position: absolute;
 				margin-left: 0 auto;
-				top: 10px;
-				right: 4px;
+				top: 46px;
+				right: 60px;
 				z-index: 2;
 				@include mixins.bp-medium{
-					top:20px;
-					right:20px;
+					top:25px;
+					right:55px;
 				}
 			}
 
