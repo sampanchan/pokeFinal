@@ -1197,8 +1197,8 @@ header .fa-comment-alt {
 @media screen and (min-width: 768px) {
   .main .poke-postcard-front::after {
     width: 150px;
-    top: 18%;
-    right: 22%;
+    top: -10%;
+    right: -1%;
   }
 }
 @media screen and (min-width: 768px) {

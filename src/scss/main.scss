@@ -398,8 +398,10 @@ header{
 			z-index: 2;
 				@include mixins.bp-medium{
 					width: 150px;
-					top: 18%;
-					right: 22%;
+					// top: 18%;
+					// right: 22%;
+					top: -10%;
+					right: -1%;
 				}
 		}
 
